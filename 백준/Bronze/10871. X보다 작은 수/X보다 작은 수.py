@@ -9,6 +9,5 @@ A=list(map(int,ipt().rstrip().split())) # 수열 입력
 for j in A: # x보다 작은 수 입력
     if j < X:
         under_x.append(j)
-for k in range(len(under_x)-1):   # 출력
-    print(under_x[k], end=" ")
-print(under_x[len(under_x)-1])
+for k in under_x:   # 출력
+    print(k, end=" ")
