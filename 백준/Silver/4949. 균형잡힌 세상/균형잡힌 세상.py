@@ -25,7 +25,7 @@ while 1:    # 무한루프
                 break
             elif bracket_list[-1] == '(':
                 bracket_list.pop()
-    if err == True and not bracket_list:
+    if err == True and not bracket_list:    # 에러가 없거나 열리는 괄호만 있는 경우는 false이기에 빈 리스트 조건 추가
         print('yes')
     else:
         print('no')
