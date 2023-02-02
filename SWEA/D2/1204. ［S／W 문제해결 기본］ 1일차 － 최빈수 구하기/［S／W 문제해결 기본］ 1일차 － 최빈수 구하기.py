@@ -1,18 +1,18 @@
-# 최빈수 구하기
+# [S/W 문제해결 기본] 1일차 - 최빈수 구하기
 
 T = int(input())
+for _ in range(T):
+    case_num = int(input())
+    score_list = list(map(int, input().split()))
+    count_list = [0]*101
+    max_count = 0
 
-for i in range(T):
-    max = 0
-    mode = 0
-    index = int(input())
-    scr = list(map(int,input().split()))    
-    scr.sort()
-    set_lst = list(set(scr))
+    for i in score_list:
+        count_list[i] += 1
 
-    for j in range(len(set_lst)):
-        tmp = scr.count(set_lst[j])
-        if max <= tmp:
-            max = tmp
-            mode = set_lst[j]
-    print(f'#{index} {mode}')
+    for j in range(len(count_list)):
+        if max_count <= count_list[j]:
+            max_count = count_list[j]
+            frequent_number = j
+
+    print(f'#{case_num} {frequent_number}')
