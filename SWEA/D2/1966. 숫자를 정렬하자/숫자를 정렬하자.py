@@ -1,13 +1,16 @@
 # 숫자를 정렬하자
 
-T = int(input())    # 반복 횟수
+T = int(input())
 for t in range(T):
-    n = int(input())  # 주어진 숫자
-    num_list = list(map(int, input().split()))  # 숫자 리스트
-    for i in range(n, 0, -1):   # 버블솔팅
-        for j in range(i-1):
-            if num_list[j] > num_list[j+1]:
-                num_list[j], num_list[j+1] = num_list[j+1], num_list[j]
+    N = int(input())
+    arr = list(map(int, input().split()))
 
-    print(f'#{t+1}', end=' ')   # 문제 요구대로 출력
-    print(*num_list)
+    for i in range(N-1):
+        min_index = i
+        for j in range(i+1, N):
+            if arr[min_index] > arr[j]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+    print(f'#{t+1} ', end='')
+    print(*arr)
