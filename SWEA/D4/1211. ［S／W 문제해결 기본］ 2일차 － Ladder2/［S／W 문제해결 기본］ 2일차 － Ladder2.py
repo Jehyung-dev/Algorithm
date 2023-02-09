@@ -1,5 +1,5 @@
 # [S/W 문제해결 기본] 2일차 - Ladder2
-
+ 
 dr = [0, 0, 1]
 dc = [1, -1, 0]
 for _ in range(10):
@@ -10,7 +10,7 @@ for _ in range(10):
     for point in range(100):
         if arr[0][point] == 1:
             start.append(point)
-
+ 
     for i in start:
         visited = [[False] * 100 for _ in range(100)]
         r, c, d, count = 0, i, 0, 0
