@@ -13,9 +13,8 @@ T = int(input())
 for t in range(T):
     N = int(input())
     arr = [list(map(int, input().split())) for _ in range(N)]
-    arr_90 = [[0] * N for _ in range(N)]
-    arr_180 = [[0] * N for _ in range(N)]
-    arr_270 = [[0] * N for _ in range(N)]
+    arr_90 = arr_180 = arr_270 = [[0] * N for _ in range(N)]
+    s = ''
 
     for i in range(N - 1, -1, -1):
         for j in range(0, N):
@@ -27,6 +26,8 @@ for t in range(T):
         for j in range(0, N):
             arr_270 = turn_90(arr_180, N)
 
-    print(f'#{t + 1}')
-    for idx in range(N):
-        print(''.join(map(str, arr_90[idx])), ''.join(map(str, arr_180[idx])), ''.join(map(str, arr_270[idx])))
+
+    for idx in range(N-1):
+        s += f"{''.join(map(str, arr_90[idx]))} {''.join(map(str, arr_180[idx]))} {''.join(map(str, arr_270[idx]))}\n"
+    s += f"{''.join(map(str, arr_90[N-1]))} {''.join(map(str, arr_180[N-1]))} {''.join(map(str, arr_270[N-1]))}"
+    print(f"#{t + 1}\n{s}")
