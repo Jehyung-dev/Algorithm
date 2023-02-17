@@ -6,6 +6,7 @@ def Start(arr, N):
         arr[N // 2 + i - 1][N // 2 - i] = 'B'
     return arr
 
+
 def Play(arr, r, c, color):
     if color == 1:
         arr[r][c] = 'B'
