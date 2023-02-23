@@ -2,11 +2,12 @@
 
 from collections import deque
 
+
 def BFS(i, j):
+    global visited
     cnt = 0
     queue = deque()
     queue.append((i, j))
-    visited = [[0] * M for _ in range(N)]
     visited[i][j] = 1
 
     while queue:
@@ -25,6 +26,7 @@ dr = [-1, 0, 1, 0]
 dc = [0, 1, 0, -1]
 N, M, K = map(int, input().split())  # 세로, 가로, 음식물 갯수
 arr = [['.'] * M for _ in range(N)]
+visited = [[0] * M for _ in range(N)]
 ans = []
 for _ in range(K):
     r, c = map(int, input().split())
@@ -32,7 +34,7 @@ for _ in range(K):
 
 for i in range(N):
     for j in range(M):
-        if arr[i][j] == '#':
+        if arr[i][j] == '#' and not visited[i][j]:
             ans.append(BFS(i, j))
 
-print(max(ans)+1)
+print(max(ans) + 1)
