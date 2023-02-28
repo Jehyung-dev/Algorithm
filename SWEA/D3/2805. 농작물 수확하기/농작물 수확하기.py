@@ -1,4 +1,4 @@
-# # 농작물 수확하기
+# 농작물 수확하기
 
 T = int(input())
 for t in range(1, T + 1):
