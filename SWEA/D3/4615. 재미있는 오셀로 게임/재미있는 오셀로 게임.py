@@ -11,10 +11,10 @@ def Play(r, c, color, Opp_color):
     arr[r][c] = color
     for di in range(8):
         nr, nc = r + dr[di], c + dc[di]
-        temp = []
+        temp = set()
         while 1:
             if 0 <= nr < N and 0 <= nc < N and arr[nr][nc] == Opp_color:
-                temp.append((nr, nc))
+                temp.add((nr, nc))
                 nr, nc = nr + dr[di], nc + dc[di]
             elif 0 > nr or nr >= N or 0 > nc or nc >= N or not arr[nr][nc]:
                 break
