@@ -1,20 +1,20 @@
 # 파리 퇴치
 
-def add_square(arr, start, end):
-    sum = 0
-    for i in range(M):
-        for j in range(M):
-            sum += arr[start+i][end+j]
-    return sum
+def Catch():
+    ans = 0
+    for i in range(0, N - M + 1):
+        for j in range(0, N - M + 1):
+            temp = 0
+            for k in range(i, i + M):
+                for l in range(j, j + M):
+                    temp += arr[k][l]
+                if temp > ans:
+                    ans = temp
+    return ans
 
-T = int(input())
-for t in range(T):
+
+for t in range(int(input())):
     N, M = map(int, input().split())
     arr = [list(map(int, input().split())) for _ in range(N)]
-    max = 0
 
-    for i in range(N-M+1):
-        for j in range(N-M+1):
-            if add_square(arr, i, j) > max:
-                max = add_square(arr, i, j)
-    print(f'#{t+1} {max}')
+    print(f'#{t + 1} {Catch()}')
