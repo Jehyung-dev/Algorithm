@@ -11,14 +11,14 @@ def Cnt(r, c, n):
                         Cnt(r + k * n // 3, c + l * n // 3, n // 3)
                 return
 
-    dic[point] += 1
+    ans[point + 1] += 1
 
 
-dic = {-1: 0, 0: 0, 1: 0}
 N = int(input())
 arr = [list(map(int, input().split())) for _ in range(N)]
+ans = [0] * 3
 
 Cnt(0, 0, N)
 
-for ans in dic.values():
-    print(ans)
+for m in ans:
+    print(m)
