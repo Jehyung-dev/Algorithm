@@ -1,12 +1,16 @@
 # 상수
 
-import sys
 
-ipt = sys.stdin.readline
-num1, num2=list(ipt().rstrip().split())
-num1=num1[::-1] # 뒤집기
-num2=num2[::-1] # 뒤집기
-if num1 >= num2:
-    print(num1)
+def Read(n):
+    return int(n[2] + n[1] + n[0])
+
+
+A, B = input().split()
+
+new_A = Read(A)
+new_B = Read(B)
+
+if new_A > new_B:
+    print(new_A)
 else:
-    print(num2)
+    print(new_B)
